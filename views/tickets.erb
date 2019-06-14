@@ -1,0 +1,37 @@
+
+<div class="tickets-title-bar">
+  <div class="id-column">ID</div>
+  <div class="subject-column">Subject</div>
+  <div class="status-column">Status</div>
+  <div class="type-column">Type</div>
+  <div class="requester-column">Requester</div>
+  <div class="assignee-column">Assignee</div>
+</div>
+
+
+<% @tickets.each do |ticket| %>
+  <div>
+    <a class="tickets-container" href="/ticket/<%= ticket['id'] %>">
+      <p class="id-column"><%= ticket['id'] %></p>
+      <p class="subject-column"><%= ticket['subject'] %></p>
+      <p class="status-column"><%= ticket['status'] %></p>
+      <% if !ticket['type'] %>
+        <p class="type-column">-</p>
+      <% else %>
+        <p class="type-column"><%= ticket['type'] %></p>
+      <% end %>
+      <p class="requester-column"><%= @users[ticket['requester_id']] %></p>
+      <p class="assignee-column"><%= @users[ticket['assignee_id']] %></p>
+    </a>
+  </div>
+<% end %>
+
+<div class="tickets-page-links">
+  <% if session[:prev_page_url] %>
+    <a class="page-link" href="/tickets/prev_page">Prev</a>
+  <% end %>
+
+  <% if session[:next_page_url] %>
+    <a class="page-link" href="/tickets/next_page">Next</a>
+  <% end %>
+</div>
