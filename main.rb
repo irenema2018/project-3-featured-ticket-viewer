@@ -38,7 +38,7 @@ post '/tickets' do
   @tickets = response['tickets']
   session[:next_page_url] = response['next_page']
   session[:prev_page_url] = response['previous_page']
-
+  @count = response['count']
   @users = create_user_object(response['users'])
 
   erb :tickets

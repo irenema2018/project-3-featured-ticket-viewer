@@ -80,6 +80,13 @@ body {
   color: #2F3941;
 }
 
+.total-tickets {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
 .tickets-title-bar {
   display: flex;
   margin-left: 1rem;
