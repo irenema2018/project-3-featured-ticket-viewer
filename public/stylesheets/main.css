@@ -58,7 +58,7 @@ body {
 }
 
 #main {
-  margin-left: 130px; /* Same as the width of the sidenav */
+  margin-left: 70px; /* Same as the width of the sidenav */
   /* width: 85%; */
   margin-top: 3%;
 }
@@ -152,7 +152,11 @@ body {
   width: 18%;
 }
 
-.single-ticket-title {
+.ticket-id {
+  margin-right: 1rem;
+}
+
+.single-ticket-title, .ticket-id {
   flex-direction: column;
   font-weight: bold;
   margin-bottom: 1rem;

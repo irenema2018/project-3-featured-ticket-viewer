@@ -73,6 +73,7 @@ get '/ticket/:id' do
   response = send_api_request(url)
        
   @ticket = response['ticket']
+  @id = @ticket['id']
   @users = create_user_object(response['users'])
   erb :ticket
 end
