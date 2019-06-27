@@ -12,7 +12,7 @@ gem install bundler
 ```
 
 ## How to run the app
-1. Test Clone the repository
+1. Clone the repository
 
 ```
 git clone https://github.com/irenema2018/Ticket-Viewer.git
