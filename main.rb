@@ -17,20 +17,34 @@ end
 get '/tickets' do
   session[:error_message] = 'Something was wrong. Please go back to Home and try again!' 
   redirect '/error'
-end
 
-post '/tickets' do
   # According to https://www.zendesk.com/register/free-trial/#subdomain
   if params[:accountname].length < 3 || # Domain must be at least 3 characters.
     params[:accountname].match(/[^0-9a-z-]/) # Symbols except dash(-) are not allowed.
      
-   session[:error_message] = 'Something was wrong with your account name. Please go back to Home and try again!'
-   redirect '/error'
- end
+    session[:error_message] = 'Something was wrong with your account name. Please go back to Home and try again!'
+    redirect '/error'
+  end
 
   session[:accountname] = params[:accountname]
   session[:email]       = params[:email]
   session[:password]    = params[:password]
+  
+
+end
+
+post '/tickets' do
+  # According to https://www.zendesk.com/register/free-trial/#subdomain
+  # if params[:accountname].length < 3 || # Domain must be at least 3 characters.
+  #   params[:accountname].match(/[^0-9a-z-]/) # Symbols except dash(-) are not allowed.
+     
+  #   session[:error_message] = 'Something was wrong with your account name. Please go back to Home and try again!'
+  #   redirect '/error'
+  # end
+
+  # session[:accountname] = params[:accountname]
+  # session[:email]       = params[:email]
+  # session[:password]    = params[:password]
 
   url = "https://#{session[:accountname]}.zendesk.com/api/v2/tickets.json?per_page=25&include=users"
   response = send_api_request(url)
