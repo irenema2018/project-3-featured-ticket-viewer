@@ -1,5 +1,5 @@
 
-<div class="total-tickets"><%=@count %> total tickets, 25 tickets each page.</div>
+<%# <div class="total-tickets"><=@count > total tickets, 25 tickets each page.</div> %>
 
 <div class="tickets-title-bar">
   <div class="id-column">ID</div>
@@ -29,11 +29,15 @@
 <% end %>
 
 <div class="tickets-page-links">
+  <div>
   <% if session[:prev_page_url] %>
     <a class="page-link" href="/tickets/prev_page">Prev</a>
   <% end %>
+  </div>
 
+  <div>
   <% if session[:next_page_url] %>
     <a class="page-link" href="/tickets/next_page">Next</a>
   <% end %>
+  </div>
 </div>
