@@ -36,8 +36,6 @@ post '/tickets' do
 
   response = send_api_request(url)
 
-  p response
-
   @tickets = response['tickets']
   session[:next_page_url] = response['next_page']
   session[:prev_page_url] = response['previous_page']
@@ -47,22 +45,10 @@ post '/tickets' do
   erb :tickets
 end
 
-get '/tickets/next_page' do
-  if !session[:next_page_url]
-    session[:error_message] = 'There is no next page.'
-    redirect '/error'
-  end
-  access_to_different_page(session[:next_page_url])         
-  erb :tickets
-end
+get '/tickets/page/:page' do
+  url = "https://#{session[:accountname]}.zendesk.com/api/v2/tickets.json?include=users&page=#{params[:page]}&per_page=25"
 
-get '/tickets/prev_page' do
-  if !session[:prev_page_url]
-    session[:error_message] = 'There is no previous page.'
-    redirect '/error'
-  end
-
-  access_to_different_page(session[:prev_page_url])
+  access_to_different_page(url)
   erb :tickets
 end
 

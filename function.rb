@@ -22,11 +22,11 @@ def create_user_object(users_array)
 end
 
 def access_to_different_page(page_url)
+  # json
   response = send_api_request(page_url)
              
   @tickets = response['tickets']
-  session[:next_page_url] = response['next_page']
-  session[:prev_page_url] = response['previous_page']
-
+  @count = response['count']
   @users = create_user_object(response['users'])
+
 end
