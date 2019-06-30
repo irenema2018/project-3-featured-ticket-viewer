@@ -59,15 +59,15 @@ ruby main_test.rb
 ```
 Please note - You'll need a valid Zendesk account in order to run the tests.
 
-## Things that be improved
+## Things that have been improved
 1. In main.rb, the controllers have code repetition that can be moved into a function. 
 2. In main_test.rb, store the password in ENV. Now tests are automatically running and not require user input anymore.
 3. Add more look and feel features.
+4. The routes `/tickets/next_page` and `/tickets/prev_page` have been changed to `/tickets/page/:page` in order to reduce redundant code.
 
 ## Things that can be improved 
 1. Http is used but should really be using https to make the app more secure.
-2. The routes `/tickets/next_page` and `/tickets/prev_page` can be changed to `/tickets/:page_id` in order to reduce redundant code.
-3. The tests only cater for accounts with more than 25 tickets. Additional tests are required for testing accounts that don't require pagination.
+2. The tests only cater for accounts with more than 25 tickets. Additional tests are required for testing accounts that don't require pagination.
 
 ## References
 Below are the list of online resources used for building the app:
