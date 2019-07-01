@@ -60,7 +60,7 @@ ruby main_test.rb
 Please note - You'll need a valid Zendesk account in order to run the tests.
 
 ## Things that have been improved
-1. In main.rb, the controllers have code repetition that can be moved into a function. 
+1. In main.rb, the controllers have code repetition that have been moved into a function file `function.rb`.
 2. In main_test.rb, store the password in ENV. Now tests are automatically running and not require user input anymore.
 3. Add more look and feel features.
 4. The routes `/tickets/next_page` and `/tickets/prev_page` have been changed to `/tickets/page/:page` in order to reduce redundant code.
