@@ -29,7 +29,7 @@
 <% end %>
 
 <div class="tickets-page-links">
-    <% page_num = (102/25.to_f).ceil %>
+    <% page_num = (@count/25.to_f).ceil %>
     <% current_page = 1 %>
     <% while current_page <= page_num %>
       <a class="page-link" href="/tickets/page/<%= current_page%>"><%= current_page %></a> 

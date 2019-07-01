@@ -129,7 +129,7 @@ body {
   width: 60%;
   margin: 1rem 0;
   text-align: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .page-link {
