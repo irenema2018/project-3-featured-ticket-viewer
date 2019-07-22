@@ -1,7 +1,7 @@
 # Ticket-Viewer
 
 ## Introduction
-This app uses sinatra in Ruby (v2.6.2) for viewing Zendesk tickets via API calls. You can sign up for a [free trial] (https://www.zendesk.com/register/) Zendesk account to access the app . 
+This app uses sinatra in Ruby (v2.6.2) for viewing Zendesk tickets via API calls. You can sign up for a [free trial](https://www.zendesk.com/register/) Zendesk account to access the app . 
 
 ## Installation
 1. [Download](https://www.ruby-lang.org/en/downloads/) and install Ruby if you don't have it on your machine. Using the most recent stable release (v2.6.3) should be fine.
